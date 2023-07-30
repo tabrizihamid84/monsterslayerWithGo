@@ -4,6 +4,8 @@ import (
 	"github.com/tabrizihamid84/monsterSlayer/interaction"
 )
 
+var currentRound = 0
+
 func main() {
 	startGame()
 
@@ -21,6 +23,11 @@ func startGame() {
 }
 
 func executeRound() string {
+	currentRound++
+	isSpecialRound := currentRound%3 == 0
+
+	interaction.ShowAvailableActions(isSpecialRound)
+
 	return ""
 }
 
