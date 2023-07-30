@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/tabrizihamid84/monsterSlayer/interaction"
 )
 
@@ -27,6 +29,9 @@ func executeRound() string {
 	isSpecialRound := currentRound%3 == 0
 
 	interaction.ShowAvailableActions(isSpecialRound)
+	userChoice := interaction.GetPlayerChoice(isSpecialRound)
+
+	fmt.Println(userChoice)
 
 	return ""
 }
