@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/tabrizihamid84/monsterSlayer/actions"
 	"github.com/tabrizihamid84/monsterSlayer/interaction"
 )
 
@@ -30,11 +31,23 @@ func executeRound() string {
 	userChoice := interaction.GetPlayerChoice(isSpecialRound)
 
 	if userChoice == "ATTACK" {
+		actions.AttackMonster(isSpecialRound)
 
 	} else if userChoice == "HEAL" {
+		actions.HealPlayer()
 
 	} else {
+		actions.AttackMonster(true)
+	}
 
+	actions.AttackPlayer()
+
+	playerHealth, monsterHealth := actions.GetHealthAmounts()
+
+	if playerHealth <= 0 {
+		return "Monster"
+	} else if monsterHealth <= 0 {
+		return "Player"
 	}
 
 	return ""
