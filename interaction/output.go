@@ -62,6 +62,7 @@ func DeclareWinner(winner string) {
 func WriteLogFile(rounds *[]RoundData) {
 	exPath, err := os.Executable()
 
+	// test
 	if err != nil {
 		fmt.Println("Writing log file failed. Exiting.")
 		return

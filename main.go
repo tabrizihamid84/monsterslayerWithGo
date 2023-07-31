@@ -63,7 +63,7 @@ func executeRound() string {
 	if playerHealth <= 0 {
 		return "Monster"
 	} else if monsterHealth <= 0 {
-		return "Player"
+		return "Player" // Test
 	}
 
 	return ""
